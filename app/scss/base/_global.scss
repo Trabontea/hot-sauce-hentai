@@ -1,0 +1,16 @@
+html {
+  box-sizing: border-box;
+  font-size: 10px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 100%;
+  width: 192rem;
+  background-color: $white;
+}
+

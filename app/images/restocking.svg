@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="295.05" height="159.172" viewBox="0 0 295.05 159.172">
+    <defs>
+        <filter id="prefix__Path_30" width="295.05" height="159.172" x="0" y="0" filterUnits="userSpaceOnUse">
+            <feOffset dx="2" dy="4"/>
+            <feGaussianBlur result="blur" stdDeviation="1.5"/>
+            <feFlood flood-opacity=".161"/>
+            <feComposite in2="blur" operator="in"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+    </defs>
+    <g id="prefix__restocking" transform="translate(5.465 3.465)">
+        <g filter="url(#prefix__Path_30)" transform="translate(-5.47 -3.47)">
+            <path id="prefix__Path_30-2" fill="#ef61a3" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="5px" d="M12.423 0h242.255A12.423 12.423 0 0 1 267.1 12.423v65.844a12.423 12.423 0 0 1-12.422 12.423H12.423A12.423 12.423 0 0 1 0 78.267V12.423A12.423 12.423 0 0 1 12.423 0z" data-name="Path 30" transform="rotate(-11.5 280.885 .703)"/>
+        </g>
+        <text id="prefix__rESTOCKING___" fill="#fff" font-family="BebasNeueBold, Bebas Neue" font-size="28px" letter-spacing="0.06em" transform="rotate(-12.04 526.801 -153.305)">
+            <tspan x="-10" y="-6">RESTOCKING...</tspan>
+        </text>
+    </g>
+</svg>

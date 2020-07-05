@@ -1,0 +1,43 @@
+
+h1, h2, h3 {
+  text-transform: uppercase;
+}
+
+h1, .big {
+  font-size: 10rem;
+  font-family: $ff-bebas;
+  color: $white;
+  letter-spacing: normal;
+}
+
+h2 {
+  font-family: $ff-bebas;
+  font-size: 6rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: 2.6rem;
+  font-family: $ff-gotham;
+  color: $magenta;
+}
+
+p {
+  font-family: $ff-primary;
+  font-size: 1.8rem;
+  line-height: 1.61;
+  color: $black;
+}
+
+.lead {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 2.4;
+  letter-spacing: 0.1px;
+  color: $magenta;
+}
+
+span {
+  font-family: $ff-primary;
+}

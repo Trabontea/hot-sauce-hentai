@@ -1,0 +1,203 @@
+.banner {
+  background-color: $black;
+  h1, h3 {
+    text-align: center;
+  }
+  h3 {
+    padding-top: 6.2rem;
+  }
+  h1 {
+    padding: 1.5rem 0;
+  }
+  .button-row {
+    padding-bottom: 8.5rem;
+  }
+  
+  .button-center {
+    max-width: 30rem;
+    margin: 0 auto;
+    border: .4rem solid $magenta;
+    border-radius: .8rem;
+    cursor: pointer;
+    p {
+      text-align: center;
+      font-family: $ff-gotham;
+      font-size: 2.8rem;
+      font-weight: 500;
+      line-height: 0.75;
+      color: $magenta;
+      padding: 2rem 0 1.6rem 0;
+    }
+  }
+  &_top {
+    @include background-cover('../images/header-img', 'png', cover, center, no-repeat);
+  }
+  &_bottom {
+    h2  {
+      text-align: center;
+    }
+    img {
+      display: block;
+      @extend %center;
+      margin-top: 6rem;
+    }
+    .button-row {
+      padding-bottom: 5.5rem;
+    }
+  }
+}
+
+.restocking {
+  display: flex;
+  &-left, &-right {
+    flex: 1;
+  }
+  &-left {
+    padding-top: 2rem;
+    position: relative;
+    .restocking-footer {
+      margin-top: 3.5rem;
+      p {
+        @extend %center;
+        text-align: center;
+        font-style: italic;
+        &:first-child {
+          font-size: 2.6rem;
+        }
+        &:nth-child(2) {
+          font-size: 3.6rem;
+          font-weight: 700;
+          color: $magenta;
+        }
+      }
+    }
+  }
+  &-label {
+    position: absolute;
+    top: 22.5rem;
+    left: 8.5rem;
+  }
+
+  &-right {
+    padding-top: 8rem;
+  }
+  .bottle {
+    img {
+      @extend %center;
+      display: block;
+      height: 100%;
+      width: 82rem;
+    }
+  }
+  h2 {
+    margin-bottom: 2rem;
+  }
+  p {
+    max-width: 76rem;
+    margin-bottom: 5rem;
+  }
+  .wrap-receipe {
+    margin-left: 2rem;
+    max-width: 74rem;
+    border-left:.4rem solid $grey;
+    padding-left: 2rem;
+  }
+  .receipe {
+    color: $grey;
+    font-style: italic;
+    line-height: 1.61;
+    position: relative;
+  }
+}
+
+.production {
+  background-color: $black;
+  padding-bottom: 6rem;
+  h2 {
+    padding: 5rem 0 3rem 0;
+    color: $white;
+    text-align: center;
+    letter-spacing: 1.2px;
+    
+  }
+  p {
+    color: $white;
+    max-width: 107rem;
+    margin: 0 auto;
+  }
+}
+
+.timeline {
+  display: flex;
+  max-width: 100%;
+  width: 144rem;
+  margin: 0 auto;
+  padding: 8rem 0;
+  &-table {
+    flex: 3;
+  }
+  &-bottle {
+    flex: 1;
+    text-align: left;
+  }
+}
+
+.timeline-table__row {
+  border-top: solid 5px $greyLight;
+  border-left: solid 5px $greyLight;
+  border-right: solid 5px $greyLight;
+  padding: 1.5rem 0 1.5rem 10rem;
+  display: flex;
+  align-items: center;
+  &:last-child {
+    border-bottom: solid 5px $greyLight;
+  }
+  .status {
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1.33;
+    letter-spacing: normal;
+    color: #a8a8a8;
+    margin-right: 2rem;
+    width: 12rem;
+  }
+  .progress {
+    background-color: $orange;
+  }
+  .active {
+    background-color: $green;
+  }
+  
+  .circle {
+    width: 3.8rem;
+    height: 3.8rem;
+    border: solid .5rem $black;
+    border-radius: 2rem;
+    margin-right: 4rem;
+  }
+  
+  .img-stage {
+    width: 11rem;
+    margin-right: 4rem;
+    img {
+      width: 10rem;
+      height: 8rem;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  .phase {
+    font-size: 2.2rem;
+    font-weight: bold;
+    line-height: 1.36;
+    letter-spacing: 0.22px;
+    text-align: left;
+    color: #000000;
+  }
+}
+
+#control, #quality {
+  img {
+    width: 8rem;
+  }
+}

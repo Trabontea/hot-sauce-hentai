@@ -1,0 +1,7 @@
+@mixin background-cover ($path, $ext: "png", $size: cover, $pos: left top, $repeat: no-repeat) {
+  $at1x_path: "#{$path}.#{$ext}";
+  background-image: url("#{$at1x_path}");
+  background-size: $size;
+  background-position: $pos;
+  background-repeat: $repeat;
+}
