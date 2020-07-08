@@ -47,11 +47,11 @@
     }
     @include desktop {
       flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
       order: unset;
-      margin-right: 2rem;
       text-align: unset;
-      width: 12rem;
-      flex: 2;
+      flex: 4;
     }
   }
   .status {
@@ -61,6 +61,10 @@
     letter-spacing: normal;
     color: #a8a8a8;
     text-align: center;
+    @include desktop {
+      text-align: unset;
+      margin-right: 3rem;
+    }
   }
   .circle {
     width: 3.8rem;
