@@ -60,6 +60,12 @@ var statusText = {
   inProgress: 'IN PROGRESS',
   done: 'DONE!'
 };
+var circles = document.querySelectorAll('circle');
+console.log(circles); //   [].forEach.call(circles , function(div) {
+//   // do whatever
+//   div.style.color = "blue";
+// console.log(cc)
+
 var productionText = document.querySelector('#production .status');
 var productionStatus = document.querySelector('#production .circle');
 var qualityText = document.querySelector('#quality .status');
@@ -138,33 +144,34 @@ function showCycle() {
   var url = arguments.length > 1 ? arguments[1] : undefined;
 
   if (active && url === URL.production) {
-    history.pushState(null, null, url);
+    //history.pushState(null, null, url + 'htm' );
     production();
     removeClass(productionStatus, qualityStatus, deliveryStatus);
   } else if (active && url === URL.quality) {
-    history.pushState(null, null, url);
+    //history.pushState(null, null, url );
     quality();
   } else if (active && url === URL.delivery) {
-    history.replaceState(null, null, url);
+    //history.replaceState(null, null, url );
     delivery();
   } else if (active && url === URL.control) {
-    history.replaceState(null, null, url);
+    //history.replaceState(null, null, url );
     control();
   } else if (active && url === URL.packing) {
-    history.replaceState(null, null, url);
+    // history.replaceState(null, null, url );
     packing();
   } else if (active && url === URL.shipping) {
-    history.replaceState(null, null, url);
+    //history.replaceState(null, null, url );
     shipping();
   } else if (active && url === URL["final"]) {
-    history.replaceState(null, null, url);
-
+    // history.replaceState(null, null, url );
     _final();
   }
 } //Call the function
-//showCycle('active', 'production');
+// showCycle('active', 'production');
+//showCycle('active', 'quality');
 
 
+showCycle('active', 'control');
 window.addEventListener('popstate', function (event) {
   // Log the state data to the console
   console.log(event.state);
@@ -189,9 +196,17 @@ function ChangeUrl(title, url) {
       Url: url
     };
     history.pushState(obj, obj.Title, obj.Url);
+    showCycle('active', obj.Url);
   } else {
     alert("Browser does not support HTML5.");
   }
-}
+} //ChangeUrl('production', production);
+//browser.omnibox.onInputChanged.addListener(listener)
+//window.addEventListener('popstate', listener);
 
-ChangeUrl('production', production);
+
+var pushUrl = function pushUrl(href) {
+  history.pushState({}, '', href);
+  window.dispatchEvent(new Event('popstate'));
+  console.log('aliluia');
+};

@@ -15,6 +15,10 @@ In this proejct, Gulp is configured to run the following functions:
  
  
  #For images 
- * Copy images in folder 'app/images'
+ * Put images in folder 'app/images'
  * Run `gulp imgTask`
  * Images will optimize and minify and their are used from folder 'dist/images'
+
+#Copy fonts
+* Put fonts in folder 'app/fonts'
+* Run `gulp fontsTask`

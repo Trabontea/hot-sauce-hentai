@@ -20,6 +20,7 @@ const files = {
   scssPath: 'app/scss/**/*.scss',
   jsPath: 'app/js/**/*.js',
   imgPath: 'app/images/**/*',
+  fontsPath: 'app/fonts/**/*'
 };
 
 // Sass task: compiles the style.scss file into style.css
@@ -69,6 +70,12 @@ function imgTask() {
     .pipe(dest('dist/images'))
 }
 
+function fontsTask() {
+  return src(files.fontsPath)
+    .pipe(dest('dist/fonts'))
+}
+
+
 // Cachebust
 function cacheBustTask(){
   let cbString = new Date().getTime();
@@ -94,7 +101,7 @@ function watchTask(){
 }
 
 // Export the default Gulp task so it can be run
-// Runs the scss, js, images tasks simultaneously
+// Runs the scss, js tasks simultaneously
 // then runs cacheBust, then watch task
 exports.default = series(
   parallel(scssTask, jsTask),
@@ -103,3 +110,4 @@ exports.default = series(
 );
 
 exports.imgTask = imgTask;
+exports.fontsTask = fontsTask;

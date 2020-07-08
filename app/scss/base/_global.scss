@@ -15,3 +15,28 @@ html {
   background-color: $white;
 }
 
+.desktop {
+  @include desktop {
+    display: block;
+  }
+  @include mobile {
+    display: none;
+  }
+}
+
+.mobile {
+  @include mobile {
+    display: block;
+  }
+  @include desktop {
+    display: none;
+  }
+}
+
+.desktop {
+  .bottle {
+    @include tablet {
+      display: none;
+    }
+  }
+}

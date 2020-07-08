@@ -1,18 +1,49 @@
-@mixin background-cover ($path, $ext: "png", $size: cover, $pos: left top, $repeat: no-repeat) {
+@mixin background-3x($path, $ext: "png", $size:cover, $pos: center center, $repeat: no-repeat) {
   $at1x_path: "#{$path}.#{$ext}";
+  $at2x_path: "#{$path}@2x.#{$ext}";
+  $at3x_path: "#{$path}@3x.#{$ext}";
+  
   background-image: url("#{$at1x_path}");
   background-size: $size;
   background-position: $pos;
   background-repeat: $repeat;
+  
+  @media all and (-webkit-device-pixel-ratio: 1) {
+    background-image: url("#{$at1x_path}");
+  }
+  @media all and (-webkit-min-device-pixel-ratio: 2) {
+  background-image: url("#{$at2x_path}");
+  }
+  @media all and (-webkit-max-device-pixel-ratio: 3) {
+    background-image: url("#{$at3x_path}");
+  }
 }
 
-$desktop: 1025px;
-$tablet: 1024px;
-$tablet: 468px;
 //Media Query
 //min-width: 1024px
 @mixin desktop {
-  @media(min-width: #{$desktop}) {
+  @media(min-width: #{$desktop + 1}) {
     @content;
   }
 }
+
+//tablet 769px - 1024px
+@mixin tablet{
+  @media (min-width: #{$mobile}) and (max-width: #{$desktop}) {
+    @content;
+  }
+}
+//mobile 768px
+@mixin mobile {
+  @media(max-width: #{$mobile - 1}) {
+    @content;
+  }
+}
+
+//mobile 320px
+@mixin smallMobile {
+  @media(max-width: #{$smallMobile}) {
+    @content;
+  }
+}
+

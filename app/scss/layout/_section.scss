@@ -1,45 +1,78 @@
 .banner {
   background-color: $black;
-  h1, h3 {
-    text-align: center;
-  }
   h3 {
-    padding-top: 6.2rem;
+    padding-top: 2rem;
+    text-align: center;
+    @include desktop {
+      padding-top: 6.2rem;
+    }
   }
   h1 {
     padding: 1.5rem 0;
+    max-width: 27rem;
+    margin: 0 auto;
+    text-align: left;
+    @include tablet {
+      text-align: center;
+      max-width: inherit;
+    }
+    @include desktop {
+      text-align: center;
+      max-width: inherit;
+    }
   }
   .button-row {
     padding-bottom: 8.5rem;
   }
   
   .button-center {
-    max-width: 30rem;
+    max-width: 22rem;
     margin: 0 auto;
     border: .4rem solid $magenta;
     border-radius: .8rem;
     cursor: pointer;
+    @include desktop {
+      max-width: 30rem;
+    }
     p {
       text-align: center;
       font-family: $ff-gotham;
-      font-size: 2.8rem;
+      font-size: 2.4rem;
       font-weight: 500;
       line-height: 0.75;
       color: $magenta;
       padding: 2rem 0 1.6rem 0;
+      @include desktop {
+        font-size: 2.8rem;
+      }
     }
   }
   &_top {
-    @include background-cover('../images/header-img', 'png', cover, center, no-repeat);
+    @include background-3x('../images/mobile/header-img-mobile', 'png', cover,  left bottom, no-repeat );
+    
+    @include desktop {
+      @include background-3x('../images/header-img', 'png', cover, center, no-repeat);
+    }
+    @include tablet{
+      @include background-3x('../images/header-img', 'png', 160% 90%, bottom, no-repeat);
+    }
   }
   &_bottom {
+    @include tablet{
+      padding-top: 3rem;
+    }
     h2  {
       text-align: center;
+      @include tablet {
+        margin-bottom: 3rem;
+      }
     }
     img {
       display: block;
       @extend %center;
       margin-top: 6rem;
+     
+      
     }
     .button-row {
       padding-bottom: 5.5rem;
@@ -49,6 +82,10 @@
 
 .restocking {
   display: flex;
+  flex-direction: column-reverse;
+  @include desktop {
+    flex-direction: row;
+  }
   &-left, &-right {
     flex: 1;
   }
@@ -65,45 +102,109 @@
           font-size: 2.6rem;
         }
         &:nth-child(2) {
-          font-size: 3.6rem;
+          font-size: 2.6rem;
           font-weight: 700;
           color: $magenta;
+          margin-bottom: 3rem;
+          @include desktop {
+            font-size: 3.6rem;
+            margin-bottom: 0;
+          }
         }
       }
     }
   }
-  //&-label {
-  //  position: absolute;
-  //  top: 40%;
-  //  display: flex;
-  //  align-items: center;
-  //  justify-content: center;
-  //  z-index: 0;
-  //  left: 4%;
-  //  right: 0;
-  //  transform: translate(50%,-50%);
-  //  width: 28rem;
-  //}
+  &-label {
+    position: absolute;
+    top: 83%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 0;
+    left: -21%;
+    right: 0;
+    transform: translate(50%,-50%);
+    width: 18rem;
+    @include tablet {
+      top: 40%;
+      width: 24rem;
+      left: -3%;
+    }
+    @include desktop  {
+      display: none
+    }
+  }
 
   &-right {
     padding-top: 8rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    @include tablet {
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+    @include desktop {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    h2 {
+      text-align: center;
+      max-width: 20rem;
+      margin: 0 auto;
+      & ~ h2 {
+        max-width: inherit;
+      }
+      @include tablet {
+        text-align: center;
+        max-width: inherit;
+      }
+      @include desktop {
+        text-align: inherit;
+        max-width: inherit;
+      }
+    }
+    p {
+      text-align: inherit;
+    }
+    .lead {
+      text-align: center;
+      @include tablet {
+        max-width: 47rem;
+        margin: 0 auto;
+      }
+      @include desktop {
+      
+      }
+    }
   }
   .bottle {
     position: relative;
     .bottles {
-      margin-left: auto;
-      margin-right: 0;
-      display: block;
+      width: 100%;
       height: 100%;
-      width: 79rem;
+      margin: 0 auto;
+      @include desktop {
+        width: 79rem;
+        margin-left: auto;
+        margin-right: 0;
+        display: block;
+      }
+      @include tablet {
+        width: 50rem;
+        display: block;
+      }
     }
-      &:before {
+    &:before {
+     content: "";
+      @include desktop {
         content: url("../images/restocking.svg");
         position: absolute;
-        top: 40%;
-        left: 1.4rem;
+        width: 16rem;
+        top: 42%;
+        left: 16%;
         transform: translate(50%,-50%);
       }
+    }
   }
   h2 {
     margin-bottom: 2rem;
@@ -111,6 +212,7 @@
   p {
     max-width: 76rem;
     margin-bottom: 5rem;
+    //text-align: center;
   }
   .wrap-receipe {
     margin-left: 2rem;
@@ -129,6 +231,12 @@
 .production {
   background-color: $black;
   padding-bottom: 6rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  @include desktop {
+    padding-left: 0;
+    padding-right: 0;
+  }
   h2 {
     padding: 5rem 0 3rem 0;
     color: $white;
@@ -140,96 +248,6 @@
     color: $white;
     max-width: 107rem;
     margin: 0 auto;
-  }
-}
-
-.timeline {
-  display: flex;
-  max-width: 100%;
-  width: 144rem;
-  margin: 0 auto;
-  padding: 8rem 0;
-  &-table {
-    flex: 3;
-  }
-  &-bottle {
-    flex: 1;
-    text-align: left;
-  }
-}
-
-.timeline-table__row {
-  border-top: solid 5px $greyLight;
-  border-left: solid 5px $greyLight;
-  border-right: solid 5px $greyLight;
-  padding: 1.5rem 0 1.5rem 10rem;
-  display: flex;
-  align-items: center;
-  &:last-child {
-    border-bottom: solid 5px $greyLight;
-  }
-  .status {
-    font-size: 1.8rem;
-    font-weight: bold;
-    line-height: 1.33;
-    letter-spacing: normal;
-    color: #a8a8a8;
-    margin-right: 2rem;
-    width: 12rem;
-    flex:2;
-  }
-  
-  
-  .circle {
-    width: 3.8rem;
-    height: 3.8rem;
-    border: solid .5rem $black;
-    border-radius: 2rem;
-    margin-right: 4rem;
-    flex: inherit;
-  }
-  
-  //status Active
-  .in-progress {
-    background-color: $orange;
-  }
-  .done {
-    background-color: $green;
-  }
-  .green {
-    color: $green;
-  }
-  
-  .img-stage {
-    width: 11rem;
-    margin-right: 4rem;
-    flex:2;
-    img {
-      width: 10rem;
-      height: 7rem;
-      display: block;
-      margin: 0 auto;
-    }
-  }
-  .phase {
-    flex: 8;
-    font-size: 2.2rem;
-    font-weight: bold;
-    line-height: 1.36;
-    letter-spacing: 0.22px;
-    text-align: left;
-    color: #000000;
-  }
-}
-
-#control, #quality {
-  img {
-    width: 6rem;
-  }
-}
-
-#production {
-  img {
-    width: 7rem;
+    text-align: center;
   }
 }

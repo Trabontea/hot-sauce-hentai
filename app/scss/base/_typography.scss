@@ -4,7 +4,10 @@ h1, h2, h3 {
 }
 
 h1, .big {
-  font-size: 10rem;
+  font-size: 8rem;
+  @include desktop {
+    font-size: 10rem;
+  }
   font-family: $ff-bebas;
   color: $white;
   letter-spacing: normal;
@@ -12,13 +15,21 @@ h1, .big {
 
 h2 {
   font-family: $ff-bebas;
-  font-size: 6rem;
-  font-weight: 500;
-  line-height: 1.2;
+  font-size: 5rem;
+  font-weight: bold;
+  line-height: 1.1;
+  @include desktop {
+    font-size: 6rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
 }
 
 h3 {
-  font-size: 2.6rem;
+  font-size: 2.2rem;
+  @include desktop {
+    font-size: 2.6rem;
+  }
   font-family: $ff-gotham;
   color: $magenta;
 }
@@ -33,9 +44,16 @@ p {
 .lead {
   font-size: 2rem;
   font-weight: bold;
-  line-height: 2.4;
   letter-spacing: 0.1px;
   color: $magenta;
+  text-align: center;
+  @include tablet {
+    font-size: 2.5rem;
+  }
+  @include desktop {
+    line-height: 2.4;
+    text-align: inherit;
+  }
 }
 
 span {

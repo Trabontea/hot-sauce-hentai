@@ -1,0 +1,138 @@
+.timeline {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  width: 144rem;
+  margin: 0 auto;
+  padding: 8rem 0;
+  @include desktop {
+    flex-direction: row;
+  }
+  &-table {
+    flex: 3;
+  }
+  &-bottle {
+    flex: 1;
+    text-align: left;
+  }
+}
+
+.timeline-table__row {
+  border-top: solid 5px $greyLight;
+  border-left: solid 5px $greyLight;
+  border-right: solid 5px $greyLight;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include tablet {
+    flex-direction: row;
+  }
+  @include desktop {
+    padding: 1.5rem 0 1.5rem 10rem;
+    flex-direction: row;
+  }
+  &:last-child {
+    border-bottom: solid 5px $greyLight;
+  }
+  
+  .first {
+    display: flex;
+    flex-direction: column-reverse;
+    order: 3;
+    @include tablet {
+      order: 1;
+      flex-direction: column;
+      flex:2;
+    }
+    @include desktop {
+      flex-direction: row;
+      order: unset;
+      margin-right: 2rem;
+      text-align: unset;
+      width: 12rem;
+      flex: 2;
+    }
+  }
+  .status {
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1.33;
+    letter-spacing: normal;
+    color: #a8a8a8;
+    text-align: center;
+  }
+  .circle {
+    width: 3.8rem;
+    height: 3.8rem;
+    border: solid .5rem $black;
+    border-radius: 2rem;
+    margin: 0 auto 2rem auto;
+    @include desktop {
+      margin: 0 4rem 0 0;
+    }
+  }
+  
+  //status Active
+  .in-progress {
+    background-color: $orange;
+  }
+  .done {
+    background-color: $green;
+  }
+  .green {
+    color: $green;
+  }
+  
+  .img-stage {
+    width: 11rem;
+    flex: 2;
+    order: 1;
+    img {
+      width: 10rem;
+      height: 7rem;
+      display: block;
+      margin: 0 auto 2rem auto;
+      @include desktop {
+        margin: 0 auto;
+      }
+    }
+    @include desktop {
+      margin-right: 4rem;
+      order: unset;
+    }
+  }
+  .phase {
+    flex: 8;
+    order: 2;
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    font-weight: bold;
+    line-height: 1.36;
+    letter-spacing: 0.22px;
+    text-align: center;
+    color: #000000;
+    max-width: 26rem;
+    @include tablet {
+      text-align: left;
+    }
+    @include desktop {
+      margin-bottom: 0;
+      max-width: unset;
+      order: unset;
+      text-align: left;
+    }
+  }
+}
+
+#control, #quality {
+  img {
+    width: 6rem;
+  }
+}
+
+#production {
+  img {
+    width: 7rem;
+  }
+}

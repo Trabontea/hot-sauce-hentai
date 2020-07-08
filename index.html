@@ -1,27 +1,24 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; manifest-src 'self'">
-</head>
+  <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://www.google.com" />
   <title>Hentai Hot Sauce</title>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="dist/css/style.min.css?cb=1594166418377">
+  <link rel="stylesheet" href="dist/css/style.min.css?cb=1594249270179">
 </head>
 <body>
-<main class="container">
-  <section class="banner banner_top">
-    <h3>THE SPICY AS FUCK</h3>
-    <h1>HENTAI HOT SAUCE</h1>
-    <div class="button-row">
-      <div class="button-center open">
-        <p>PRE ORDER</p>
+  <main class="container">
+    <section class="banner banner_top">
+      <h3>THE SPICY AS FUCK</h3>
+      <h1>HENTAI HOT SAUCE</h1>
+      <div class="button-row">
+        <div class="button-center open">
+          <p>PRE ORDER</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
   <!-- Modal -->
   <div class="modal-container" id="modal">
     <div class="modal">
@@ -59,15 +56,25 @@
   <!-- End Modal -->
   <section class="restocking">
     <div class="restocking-left">
-      <div class="bottle">
-        <img class="bottles" src="dist/images/retouch-bottle-lineup.png"
-           srcset="dist/images/retouch-bottle-lineup.png 1x,
+      <div class="desktop">
+        <div class="bottle">
+          <img class="bottles" src="dist/images/retouch-bottle-lineup.png"
+               srcset="dist/images/retouch-bottle-lineup.png 1x,
               dist/images/retouch-bottle-lineup@2x.png 2x,
               dist/images/retouch-bottle-lineup@3x.png 3x"
-           alt="Hot Souce Hentai">
-<!--        <img class="restocking-label" src="dist/images/restocking.svg" alt="Restocking bottle">-->
+               alt="Hot Souce Hentai">
+        </div>
       </div>
-
+      <div class="mobile">
+        <div class="bottle ">
+          <img class="bottles" src="dist/images/mobile/retouch-bottle-lineup.png"
+               srcset="dist/images/mobile/retouch-bottle-lineup.png 1x,
+              dist/images/mobile/retouch-bottle-lineup@2x.png 2x,
+              dist/images/mobile/retouch-bottle-lineup@3x.png 3x"
+               alt="Hot Souce Hentai">
+          <img class="restocking-label" src="dist/images/restocking.svg" alt="Restocking bottle">
+        </div>
+      </div>
         <div class="restocking-footer">
           <p>If You have any questions please reach out to</p>
           <p>hotsauce@nutaku.net</p>
@@ -106,56 +113,89 @@
   <section class="timeline">
     <ul class="timeline-table">
       <li class="timeline-table__row" id="production">
-        <span class="status"></span>
-        <span class="circle"></span>
+        <div class="first">
+          <div class="status"></div>
+          <div class="circle"></div>
+        </div>
         <div class="img-stage">
-          <img src="dist/images/PRODUCTION@3x.png" alt="Production">
+          <img src="dist/images/PRODUCTION.png"
+               srcset="dist/images/PRODUCTION.png 1x, dist/images/PRODUCTION@2x.png 2x,
+                dist/images/PRODUCTION@3x.png 3x"
+           alt="Production">
         </div>
         <span class="phase">PRODUCTION (FERMENTING, MIXING)</span>
       </li>
-        <li class="timeline-table__row" id="quality">
-          <span class="status"></span>
-          <span class="circle"></span>
-          <div class="img-stage">
-            <img src="dist/images/Bottling@3x.png" alt="Quality">
-          </div>
-          <span class="phase">BOTTLING & QUALITY CONTROL</span>
-        </li>
-      <li class="timeline-table__row" id="delivery">
-        <span class="status"></span>
-        <span class="circle"></span>
+      <li class="timeline-table__row" id="quality">
+        <div class="first">
+          <div class="status"></div>
+          <div class="circle"></div>
+        </div>
         <div class="img-stage">
-          <img src="dist/images/NUTAKU-HQ@3x.png" alt="Delivery">
+          <img src="dist/images/Bottling.png"
+            srcset="dist/images/Bottling.png 1x,
+              dist/images/Bottling@2x.png 2x,
+              dist/images/Bottling@3x.png 3x"
+             alt="Quality">
+        </div>
+        <span class="phase">BOTTLING & QUALITY CONTROL</span>
+      </li>
+      <li class="timeline-table__row" id="delivery">
+        <div class="first">
+          <div class="status"></div>
+          <div class="circle"></div>
+        </div>
+        <div class="img-stage">
+          <img src="dist/images/NUTAKU-HQ.png"
+             srcset="dist/images/NUTAKU-HQ.png 1x, dist/images/NUTAKU-HQ@2x.png 2x,
+              dist/images/NUTAKU-HQ@3x.png 3x"
+            alt="Delivery">
         </div>
         <span class="phase">DELIVERY TO NUTAKU HQ</span>
       </li>
       <li class="timeline-table__row" id="control">
-        <span class="status"></span>
-        <span class="circle"></span>
+        <div class="first">
+          <div class="status"></div>
+          <div class="circle"></div>
+        </div>
         <div class="img-stage">
-          <img src="dist/images/QUALITY-CONTROL-02@3x.png" alt="Control">
+          <img src="dist/images/QUALITY-CONTROL-02.png"
+               srcset="dist/images/QUALITY-CONTROL-02.png 1x, dist/images/QUALITY-CONTROL-02@2x.png 2x,
+              dist/images/QUALITY-CONTROL-02@3x.png 3x"
+               alt="Control">
         </div>
         <span class="phase">SECOND QUALITY CONTROL</span>
       </li>
       <li class="timeline-table__row" id="packing">
-        <span class="status"></span>
-        <span class="circle"></span>
+        <div class="first">
+          <div class="status"></div>
+          <div class="circle"></div>
+        </div>
         <div class="img-stage">
-          <img src="dist/images/HAND-PACKAGING@3x.png" alt="Packing">
+          <img src="dist/images/HAND-PACKAGING.png"
+               srcset="dist/images/HAND-PACKAGING.png 1x, dist/images/HAND-PACKAGING@2x.png 2x,
+              dist/images/HAND-PACKAGING@3x.png 3x"
+               alt="Packing">
         </div>
         <span class="phase">HAND PACKING</span>
       </li>
       <li class="timeline-table__row" id="shipping">
-        <span class="status"></span>
-        <span class="circle"></span>
+        <div class="first">
+          <div class="status"></div>
+          <div class="circle"></div>
+        </div>
         <div class="img-stage">
-          <img  src="dist/images/DELIVERY@3x.png" alt="Shipping">
+          <img  src="dist/images/DELIVERY.png"
+            srcset="dist/images/DELIVERY.png 1x, dist/images/DELIVERY@2x.png 2x,
+              dist/images/DELIVERY@3x.png 3x"
+                alt="Shipping">
         </div>
         <span class="phase">SHIPPING TO HENTAI LOVERS</span>
       </li>
     </ul>
     <div class="timeline-bottle">
-      BOTTLE
+      <div id="bottle">
+        BOTTTTLEEE (((()))))
+      </div>
     </div>
   </section>
 
@@ -170,7 +210,6 @@
     </div>
   </section>
 </main>
-<!-- JavaScript File -->
-<script src="dist/js/script.min.js?cb=1594166418377"></script>
+<script src="dist/js/script.min.js?cb=1594249270179"></script>
 </body>
 </html>

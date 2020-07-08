@@ -14,6 +14,14 @@ const statusText = {
   done: 'DONE!'
 };
 
+const circles = document.querySelectorAll('circle');
+console.log(circles);
+  
+//   [].forEach.call(circles , function(div) {
+//   // do whatever
+//   div.style.color = "blue";
+// console.log(cc)
+
 const productionText = document.querySelector('#production .status');
 const productionStatus = document.querySelector('#production .circle');
 const qualityText = document.querySelector('#quality .status');
@@ -82,34 +90,35 @@ function final() {
   shippingStatus.classList.add('done');
 }
 
-
 function showCycle(active = "active", url) {
   if (active && url === URL.production) {
-    history.pushState(null, null, url );
+    //history.pushState(null, null, url + 'htm' );
     production();
-    removeClass(productionStatus, qualityStatus,deliveryStatus)
+    removeClass(productionStatus, qualityStatus,deliveryStatus);
   } else if (active && url === URL.quality) {
-    history.pushState(null, null, url );
+    //history.pushState(null, null, url );
     quality();
   } else if (active && url === URL.delivery) {
-    history.replaceState(null, null, url );
+    //history.replaceState(null, null, url );
     delivery();
   } else if (active && url === URL.control) {
-    history.replaceState(null, null, url );
+    //history.replaceState(null, null, url );
     control();
   } else if (active && url === URL.packing) {
-    history.replaceState(null, null, url );
+   // history.replaceState(null, null, url );
     packing();
   } else if (active && url === URL.shipping) {
-    history.replaceState(null, null, url );
+    //history.replaceState(null, null, url );
     shipping();
   } else if (active && url === URL.final) {
-    history.replaceState(null, null, url );
+   // history.replaceState(null, null, url );
     final()
   }
 }
 //Call the function
-//showCycle('active', 'production');
+// showCycle('active', 'production');
+//showCycle('active', 'quality');
+showCycle('active', 'control');
 
 
 window.addEventListener('popstate', function (event) {
@@ -136,8 +145,19 @@ function ChangeUrl(title, url) {
   if (typeof (history.pushState) != "undefined") {
     var obj = { Title: title, Url: url };
     history.pushState(obj, obj.Title, obj.Url);
+    showCycle('active', obj.Url);
   } else {
     alert("Browser does not support HTML5.");
   }
 }
-ChangeUrl('production', production);
+//ChangeUrl('production', production);
+
+//browser.omnibox.onInputChanged.addListener(listener)
+
+//window.addEventListener('popstate', listener);
+
+const pushUrl = (href) => {
+  history.pushState({}, '', href);
+  window.dispatchEvent(new Event('popstate'));
+  console.log('aliluia')
+};
