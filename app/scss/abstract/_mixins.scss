@@ -5,3 +5,14 @@
   background-position: $pos;
   background-repeat: $repeat;
 }
+
+$desktop: 1025px;
+$tablet: 1024px;
+$tablet: 468px;
+//Media Query
+//min-width: 1024px
+@mixin desktop {
+  @media(min-width: #{$desktop}) {
+    @content;
+  }
+}

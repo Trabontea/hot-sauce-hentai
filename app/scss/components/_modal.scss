@@ -1,0 +1,146 @@
+.modal-container {
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index:10;
+  
+  &.show-modal {
+    display: block;
+  }
+}
+
+.modal {
+  background-color: #fff;
+  border-radius: .5rem;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  width: 50rem;
+  animation-name: modalopen;
+  animation-duration: 1s;
+}
+
+.modal-header {
+  background: $magenta;
+  color: #fff;
+  padding: 15px;
+  
+  h3 {
+    margin: 0;
+    color: $black;
+  }
+}
+
+.modal-content {
+  padding: 20px;
+  p {
+    margin-bottom: 2rem;
+  }
+}
+
+.modal-form {
+  .field {
+    display: flex;
+    flex-flow: column-reverse;
+    margin-bottom: 1rem;
+  }
+  
+  label, input {
+    transition: all 0.2s;
+    touch-action: manipulation;
+    font-family: $ff-primary;
+  }
+  
+  input {
+    font-size: 1.8rem;
+    padding: 1rem 0;
+    border: 0;
+    border-bottom: 1px solid $grey;
+    border-radius: 0;
+    cursor: text;
+    background: transparent;
+    
+    &:focus {
+      outline: 0;
+      border-bottom: 1px solid $grey;
+      
+      &::-webkit-input-placeholder {
+        opacity: 1;
+      }
+    }
+    
+    &:placeholder-shown {
+      & + label {
+        cursor: text;
+        max-width: 66.66%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        transform-origin: left bottom;
+        transform: translate(0, 2.125rem) scale(1.5);
+        font-family: $ff-primary;
+      }
+    }
+  }
+  label {
+    letter-spacing: 0.05rem;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  ::-webkit-input-placeholder {
+    opacity: 0;
+    transition: inherit;
+  }
+  input:not(:placeholder-shown) + label,
+  input:focus + label {
+    transform: translate(0, 0) scale(1);
+    cursor: pointer;
+  }
+  .submit-btn {
+    margin-top: 2rem;
+    border: .2rem solid #ef61a3;
+    border-radius: .8rem;
+    padding: 1rem  .8rem;
+    cursor: pointer;
+    background: transparent;
+    font-size: 2rem;
+    color: $black;
+  }
+}
+
+.close-btn {
+  background: transparent;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  transition: 0.70s;
+  &:hover {
+    transform: rotate(180deg);
+    transition: 0.70s;
+  }
+  img {
+    width: 3rem;
+    height: 100%;
+    svg {
+      fill: white;
+    }
+  }
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  
+  to {
+    opacity: 1;
+  }
+}

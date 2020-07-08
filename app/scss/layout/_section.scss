@@ -72,22 +72,38 @@
       }
     }
   }
-  &-label {
-    position: absolute;
-    top: 22.5rem;
-    left: 8.5rem;
-  }
+  //&-label {
+  //  position: absolute;
+  //  top: 40%;
+  //  display: flex;
+  //  align-items: center;
+  //  justify-content: center;
+  //  z-index: 0;
+  //  left: 4%;
+  //  right: 0;
+  //  transform: translate(50%,-50%);
+  //  width: 28rem;
+  //}
 
   &-right {
     padding-top: 8rem;
   }
   .bottle {
-    img {
-      @extend %center;
+    position: relative;
+    .bottles {
+      margin-left: auto;
+      margin-right: 0;
       display: block;
       height: 100%;
-      width: 82rem;
+      width: 79rem;
     }
+      &:before {
+        content: url("../images/restocking.svg");
+        position: absolute;
+        top: 40%;
+        left: 1.4rem;
+        transform: translate(50%,-50%);
+      }
   }
   h2 {
     margin-bottom: 2rem;
@@ -160,13 +176,9 @@
     color: #a8a8a8;
     margin-right: 2rem;
     width: 12rem;
+    flex:2;
   }
-  .progress {
-    background-color: $orange;
-  }
-  .active {
-    background-color: $green;
-  }
+  
   
   .circle {
     width: 3.8rem;
@@ -174,19 +186,33 @@
     border: solid .5rem $black;
     border-radius: 2rem;
     margin-right: 4rem;
+    flex: inherit;
+  }
+  
+  //status Active
+  .in-progress {
+    background-color: $orange;
+  }
+  .done {
+    background-color: $green;
+  }
+  .green {
+    color: $green;
   }
   
   .img-stage {
     width: 11rem;
     margin-right: 4rem;
+    flex:2;
     img {
       width: 10rem;
-      height: 8rem;
+      height: 7rem;
       display: block;
       margin: 0 auto;
     }
   }
   .phase {
+    flex: 8;
     font-size: 2.2rem;
     font-weight: bold;
     line-height: 1.36;
@@ -198,6 +224,12 @@
 
 #control, #quality {
   img {
-    width: 8rem;
+    width: 6rem;
+  }
+}
+
+#production {
+  img {
+    width: 7rem;
   }
 }

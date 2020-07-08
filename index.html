@@ -4,10 +4,12 @@
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; manifest-src 'self'">
+</head>
   <title>Hentai Hot Sauce</title>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="dist/css/style.min.css?cb=1593983250355">
+  <link rel="stylesheet" href="dist/css/style.min.css?cb=1594166418377">
 </head>
 <body>
 <main class="container">
@@ -15,17 +17,57 @@
     <h3>THE SPICY AS FUCK</h3>
     <h1>HENTAI HOT SAUCE</h1>
     <div class="button-row">
-      <div class="button-center">
+      <div class="button-center open">
         <p>PRE ORDER</p>
       </div>
     </div>
   </section>
+  <!-- Modal -->
+  <div class="modal-container" id="modal">
+    <div class="modal">
+      <div class="close-btn" id="close">
+        <img src="dist/images/close.svg">
+      </div>
+      <div class="modal-header">
+        <h3>PRE ORDER</h3>
+      </div>
+      <div class="modal-content">
+        <p>Order This Fucking Hot Sauce! </p>
+        <form class="modal-form" id="myForm">
+          <div class="field">
+            <input type="text" name="fullname" id="fullname" placeholder="Carl Carlson" required>
+            <label for="fullname">Name</label>
+          </div>
+          <div class="field">
+            <input type="email" name="email" id="email" placeholder="carl@example.com" required>
+            <label for="email">Email</label>
+          </div>
+          <div class="field">
+            <input type="text" name="city" id="city" placeholder="London" required>
+            <label for="city">City</label>
+          </div>
+          <div class="field">
+            <input type="text" name="country" id="country" placeholder="UK" required>
+            <label for="country">Country</label>
+          </div>
+          <button type="submit" class="submit-btn">Submit</button>
+        </form>
+        <div id="message"></div>
+      </div>
+    </div>
+  </div>
+  <!-- End Modal -->
   <section class="restocking">
     <div class="restocking-left">
       <div class="bottle">
-        <img   src="dist/images/retouch-bottle-lineup@3x.png" alt="Hot Souce Hentai">
+        <img class="bottles" src="dist/images/retouch-bottle-lineup.png"
+           srcset="dist/images/retouch-bottle-lineup.png 1x,
+              dist/images/retouch-bottle-lineup@2x.png 2x,
+              dist/images/retouch-bottle-lineup@3x.png 3x"
+           alt="Hot Souce Hentai">
+<!--        <img class="restocking-label" src="dist/images/restocking.svg" alt="Restocking bottle">-->
       </div>
-      <img class="restocking-label" src="dist/images/restocking.svg" alt="Restocking bottle">
+
         <div class="restocking-footer">
           <p>If You have any questions please reach out to</p>
           <p>hotsauce@nutaku.net</p>
@@ -64,8 +106,8 @@
   <section class="timeline">
     <ul class="timeline-table">
       <li class="timeline-table__row" id="production">
-        <span class="status">IN PROGRESS</span>
-        <span class="circle progress"></span>
+        <span class="status"></span>
+        <span class="circle"></span>
         <div class="img-stage">
           <img src="dist/images/PRODUCTION@3x.png" alt="Production">
         </div>
@@ -117,12 +159,11 @@
     </div>
   </section>
 
-
   <section class="banner banner_bottom">
     <h3>THE SPICY AS FUCK</h3>
     <h2 class="big">HENTAI HOT SAUCE</h2>
     <div class="button-row">
-      <div class="button-center">
+      <div class="button-center open">
         <p>PRE ORDER</p>
       </div>
       <img src="dist/images/nutaku-logo.svg" alt="Nutaku Logo">
@@ -130,6 +171,6 @@
   </section>
 </main>
 <!-- JavaScript File -->
-<script src="dist/js/script.min.js?cb=1593983250355"></script>
+<script src="dist/js/script.min.js?cb=1594166418377"></script>
 </body>
 </html>

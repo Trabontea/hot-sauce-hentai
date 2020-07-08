@@ -1,52 +1,51 @@
-console.log("Load script.js and pula");
 
-// Instantiating the global app object
+window.addEventListener( "load", function () {
+  const form = document.getElementById( "myForm" );
+  const close = document.getElementById('close');
+  const open = document.querySelectorAll('.open');
+  const modal = document.getElementById('modal');
+  const paragr = document.querySelector('.modal-content p');
+  
+// Show modal
+  [].forEach.call(open, el => {
+    el.onclick = () => {
+      modal.classList.add('show-modal');
+    }
+  });
+  
+// Hide modal
+  close.addEventListener('click', () => modal.classList.remove('show-modal'));
 
+// Hide modal on outside click
+  window.addEventListener('click', e =>
+    e.target === modal ? modal.classList.remove('show-modal') : false
+  );
 
-const multiplyES5 = function(x, y) {
-  return x * y;
-};
+  function sendData() {
+    const XHR = new XMLHttpRequest();
+    
+    const objForm = Object.values(form).reduce((obj,field) => {
+      obj[field.name] = field.value;
+      return obj },  {});
+    
+    XHR.addEventListener( "load", function(event) {
+      document.getElementById('message').innerHTML = `<p>Thank you for your order ${objForm.fullname}</p>
+      <p>Youl will receive information on this email address: ${objForm.email}</p>`;
+      form.style.display = "none";
+      paragr.style.display = "none"
+    } );
+    
+    XHR.addEventListener( "error", function( event ) {
+      document.getElementById('message').innerHTML = `Your order has a problem!`
+    } );
 
-const result = multiplyES5(3, 4);
-console.log(result);
+    XHR.open( "POST", "https://jsonplaceholder.typicode.com/posts" );
+    XHR.send( [objForm.fullname, objForm.city, objForm.email, objForm.country]);
+  }
 
-
-const add = (a, b) => {
-  return a + b
-}
-console.log(add(20, 300));
-
-//buns
-// window.addEventListener( "load", function () {
-//   const form = document.getElementById( "myForm" );
-//
-//   function sendData() {
-//     const XHR = new XMLHttpRequest();
-//
-//     const objForm = Object.values(form).reduce((obj,field) => {
-//       obj[field.name] = field.value;
-//       return obj },  {});
-//
-//     console.log(objForm);
-//
-//     XHR.addEventListener( "load", function(event) {
-//       document.getElementById('message').innerHTML = `<p>Thank you for your order ${objForm.name}</p>
-//       <p>Youl will receive information on this email address: ${objForm.email}</p>`;
-//       form.style.display = "none";
-//     } );
-//
-//
-//     XHR.addEventListener( "error", function( event ) {
-//       document.getElementById('message').innerHTML = `Your order has a problem!`
-//     } );
-//
-//     XHR.open( "POST", "https://jsonplaceholder.typicode.com/posts" );
-//     XHR.send( [objForm.name, objForm.city, objForm.email]);
-//   }
-//
-//   form.addEventListener( "submit", function ( event ) {
-//     event.preventDefault();
-//     sendData();
-//   });
-// });
+  form.addEventListener( "submit", function ( event ) {
+    event.preventDefault();
+    sendData();
+  });
+});
 
