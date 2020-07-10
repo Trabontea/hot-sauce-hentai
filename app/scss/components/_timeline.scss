@@ -14,6 +14,27 @@
   &-bottle {
     flex: 1;
     text-align: left;
+    @include desktop {
+      margin-left: 3rem;
+    }
+    
+  
+    .bottle {
+      margin: 4rem auto 0 auto;
+      display: block;
+      height: 50rem;
+      @include tablet {
+        margin: 4rem auto 0 auto;
+        display: block;
+        height: 50rem;
+      }
+      @include desktop {
+        height: 70rem;
+        padding-bottom: 5rem;
+        margin: unset;
+      }
+     
+    }
   }
 }
 
@@ -34,6 +55,17 @@
   }
   &:last-child {
     border-bottom: solid 5px $greyLight;
+  }
+  
+  &.active {
+    .circle {
+      background-color: $orange;
+    }
+  }
+  &.done {
+    .circle {
+      background-color: $green;
+    }
   }
   
   .first {
@@ -66,6 +98,7 @@
       margin-right: 3rem;
     }
   }
+  
   .circle {
     width: 3.8rem;
     height: 3.8rem;
@@ -75,17 +108,6 @@
     @include desktop {
       margin: 0 4rem 0 0;
     }
-  }
-  
-  //status Active
-  .in-progress {
-    background-color: $orange;
-  }
-  .done {
-    background-color: $green;
-  }
-  .green {
-    color: $green;
   }
   
   .img-stage {

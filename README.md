@@ -22,3 +22,18 @@ In this proejct, Gulp is configured to run the following functions:
 #Copy fonts
 * Put fonts in folder 'app/fonts'
 * Run `gulp fontsTask`
+
+
+#Timeline
+
+Call the function in console
+viewCycle('active', 'production');
+
+The cycles are:
+production
+quality
+delivery
+control
+packing
+shipping
+final
